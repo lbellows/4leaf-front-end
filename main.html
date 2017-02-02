@@ -1,0 +1,49 @@
+
+<script>
+var imageFolder = "dist/images/slideshow/";
+
+function loadImgData(){
+    $.ajax({
+        url: imageFolder
+    })
+    .done(function(data) {
+        $(data).find("a").attr("href", function (i, val) {
+            if (val.match(/\.(jpe?g|png|gif)$/gi)) {
+                $(".bxslider").append("<li><img src='" + val + "' /></li>");
+            }
+
+        });
+    });
+}
+
+$(function(){
+    //loadImgData();
+    $('.bxslider').bxSlider({
+        auto: true,
+        autoControls: true
+    });
+});
+</script>
+<section class="featured">
+    <div class="content-wrapper">
+        <div class="info"><h2>Providing top of the line electric installations, service, and maintenance.</h2></div>
+        <p>We offer free estimates to make sure you are happy with the price before work begins. Emergency service is also 
+            available for all our projects. Contact us <a href="mailto:gbellows@4leafelectric.com">here</a> with any questions or comments.</p>
+        <div class="info"><h2>Location: Kingston, New York</h2></div>
+        <div class="clear-fix"> 
+            <p style="float:left;max-width:600px" >Based in the heartland of Upstate New York's Hudson Valley, we happily serve the 
+                following counties: Ulster, Orange, Dutchess, Rockland, Putnam, Westchester, Greene, and Delaware. <br /><br />
+
+                Browse the site or visit the <a href="https://www.facebook.com/4leafconstruction/">facebook</a> site for more info!
+            </p>
+        </div>
+    </div>
+</section>
+<ul class="bxslider">
+    <li><img src="/dist/images/slideshow/buildingentry.jpg" /></li>
+    <li><img src="/dist/images/slideshow/electricremodel.jpg" /></li>
+    <li><img src="/dist/images/slideshow/electricremodelwork.jpg" /></li>
+    <li><img src="/dist/images/slideshow/outsidealarm.jpg" /></li>
+    <li><img src="/dist/images/slideshow/reclighting.jpg" /></li>
+    <li><img src="/dist/images/slideshow/tankfield.jpg" /></li>
+</ul>
