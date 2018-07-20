@@ -1,7 +1,6 @@
 ﻿// Gulp Requires
 var gulp = require('gulp'),
     bundle = require('gulp-concat'),
-    clean = require('gulp-clean'),
     minifycss = require('gulp-clean-css'),
     minifyjs = require('gulp-uglify'),
     minifyimg = require('gulp-imagemin'),
